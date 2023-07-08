@@ -9,6 +9,10 @@ public class ShootRandomly : MonoBehaviour
     private Shooter _shooter;
     private TurnToFace _turnToFace;
 
+    private float TurnSpeed = 50.0f;
+
+    private bool _enabled = true;
+
     void Awake()
     {
         _shooter = GetComponent<Shooter>();
@@ -26,11 +30,24 @@ public class ShootRandomly : MonoBehaviour
 
     void Update()
     {
+        if (!_enabled)
+        {
+            return;
+        }
+
         var asteroids = GameObject.FindGameObjectsWithTag(Game.AsteroidTag);
         if (asteroids.Length == 0)
         {
-            // TODO: win condition, but do this in Game.cs
-            Debug.Log("All Asteroids destroyed, no target found");
+            // Debug.Log("All Asteroids destroyed, no target found");
+            var game = GameObject.FindWithTag("Game")?.GetComponent<Game>();
+            if (game)
+            {
+                game.Lose();
+                // _enabled = false; // stop shooting randomly
+                Destroy(_turnToFace.Crosshairs);
+                Destroy(_turnToFace);
+                Destroy(this);
+            }
             return;
         }
 
@@ -51,7 +68,7 @@ public class ShootRandomly : MonoBehaviour
         {
             if (asteroid.transform != _turnToFace.IsTurningTo)
             {
-                _turnToFace.TurnTo(asteroid.transform, 30.0f);
+                _turnToFace.TurnTo(asteroid.transform, TurnSpeed);
             }
             return;
         }
@@ -61,6 +78,6 @@ public class ShootRandomly : MonoBehaviour
         // Debug.Log("Turning to face and shoot");
         // Debug.Log(asteroid);
 
-        _turnToFace.TurnTo(asteroid.transform, 30.0f);
+        _turnToFace.TurnTo(asteroid.transform, TurnSpeed);
     }
 }

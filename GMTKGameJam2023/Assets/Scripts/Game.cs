@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
     public static readonly string AsteroidTag = "Asteroid";
     public static readonly string BulletTag = "Bullet";
     public static readonly string CrosshairTag = "Crosshair";
+    public static readonly string HealthBarTag = "HealthBar";
     public static readonly string ShipTag = "Ship";
 
     public GameObject AsteroidPrefab;
@@ -18,6 +19,9 @@ public class Game : MonoBehaviour
     public float AsteroidSpawnMaxSpeed = 5.0f;
 
     private Camera _camera;
+
+    private bool _win;
+    private bool _lose;
 
     void Awake()
     {
@@ -86,6 +90,32 @@ public class Game : MonoBehaviour
         rigidbody.velocity = speed;
         asteroid.transform.parent = gameObject.transform;
         return asteroidGameObject;
+    }
+
+    public void Win()
+    {
+        if (_win || _lose)
+        {
+            return;
+        }
+
+        // TODO: implement win screen
+        Debug.Log("Win");
+        _win = true;
+        Time.timeScale = 0;
+    }
+
+    public void Lose()
+    {
+        if (_win || _lose)
+        {
+            return;
+        }
+
+        // TODO: implement lose screen
+        Debug.Log("Lose");
+        _lose = true;
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame

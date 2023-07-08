@@ -40,7 +40,7 @@ public class TurnToFace : MonoBehaviour
 
     void Update()
     {
-        if (!_turning)
+        if (!_turning || Time.timeScale == 0)
         {
             return;
         }
