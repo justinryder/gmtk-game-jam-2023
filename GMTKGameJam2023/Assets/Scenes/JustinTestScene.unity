@@ -272,6 +272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 4828720520398466645, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -315,6 +319,10 @@ PrefabInstance:
     - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412481811570598936, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -373,6 +381,10 @@ PrefabInstance:
     - target: {fileID: 128083209114575946, guid: 477b4153a3d1e1f458421adb231fe856, type: 3}
       propertyPath: m_Name
       value: Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 2941613114198460318, guid: 477b4153a3d1e1f458421adb231fe856, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3203854307441582893, guid: 477b4153a3d1e1f458421adb231fe856, type: 3}
       propertyPath: m_Enabled
