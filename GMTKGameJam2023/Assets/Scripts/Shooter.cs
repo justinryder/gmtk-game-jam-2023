@@ -5,9 +5,9 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public GameObject BulletPrefab;
-    public float BulletSpeed = 10.0f;
-    public float BulletSpawnDistance = 0.5f;
-    public float ShootDelay = 1.0f;
+    private float BulletSpeed = 10.0f;
+    private float BulletSpawnDistance = 0.5f;
+    private float ShootDelay = 1.0f;
 
     private bool _debug = true;
     private float _lastShotTime;
@@ -34,6 +34,8 @@ public class Shooter : MonoBehaviour
         {
             return;
         }
+
+        Debug.Log("Shoot");
 
         _lastShotTime = Time.time;
 
