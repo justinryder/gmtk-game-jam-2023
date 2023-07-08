@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     private GameObject SOI;
     private GameObject Ship;
-    private GameObject[] Asteroid;
+    //private GameObject[] Asteroid;
     public float distanceTotal;
 
     private float speed = -1.0f;
@@ -18,11 +18,6 @@ public class PlayerMovement : MonoBehaviour
         if (!SOI)
         {
             Debug.LogError("PlayerMovement.cs requires the tag SOI to exist in the scene");
-        }
-        Asteroid = GameObject.FindGameObjectsWithTag("Asteroid");
-        if (!Asteroid)
-        {
-            Debug.LogError("PlayerMovement.cs requires the tag Asteroid to exist in the scene");
         }
         
         Ship = GameObject.FindWithTag("Ship");
@@ -41,16 +36,17 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach ()
-        {
 
-        }
         Vector3 delta = SOI.transform.position - Ship.transform.position;
         distanceTotal = delta.magnitude;
 
         float step = speed * Time.deltaTime;
 
         // move sprite towards the target location
-        transform.position += delta.normalized * step;
+        if (distanceTotal < 2)
+        {
+            transform.position += delta.normalized * step;
+        }
+        
     }
 }
