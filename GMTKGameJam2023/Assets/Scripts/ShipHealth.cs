@@ -6,7 +6,7 @@ public class ShipHealth : MonoBehaviour
 {
     private HealthBar HealthBar;
 
-    private const int _maxHealth = 1;
+    private const int _maxHealth = 10;
     private int _health = _maxHealth;
 
     void Awake()
