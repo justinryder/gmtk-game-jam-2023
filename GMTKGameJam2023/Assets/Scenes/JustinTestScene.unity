@@ -491,14 +491,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Game
       objectReference: {fileID: 0}
-    - target: {fileID: 4851875545058213788, guid: a4eb33212b8f1ad42be9aa313446e580, type: 3}
-      propertyPath: AsteroidSpawnMaxSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4851875545058213788, guid: a4eb33212b8f1ad42be9aa313446e580, type: 3}
-      propertyPath: AsteroidSpawnMinSpeed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8264647935958631290, guid: a4eb33212b8f1ad42be9aa313446e580, type: 3}
       propertyPath: m_RootOrder
       value: 2
