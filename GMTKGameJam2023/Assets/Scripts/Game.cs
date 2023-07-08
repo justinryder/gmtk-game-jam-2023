@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    public static readonly string AsteroidTag = "Asteroid";
+    public static readonly string BulletTag = "Bullet";
+    public static readonly string ShipTag = "Ship";
+
     public GameObject AsteroidPrefab;
 
     public int AsteroidSpawnCount = 20;
@@ -34,6 +38,7 @@ public class Game : MonoBehaviour
         var rand = new System.Random();
         for (var i = 0; i < AsteroidSpawnCount; i++)
         {
+            // TODO: don't spawn on top of or near player
             SpawnAsteroid(RandomWorldPositionOnScreen(), rand.Next(Asteroid.MinSize, Asteroid.MaxSize + 1), RandomSpeed());
         }
     }

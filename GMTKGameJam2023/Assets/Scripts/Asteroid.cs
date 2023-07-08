@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    public string AsteroidTag = "Asteroid";
-    public string BulletTag = "Bullet";
-
     private static readonly float[] Sizes = new[]
     {
         0.2f,
@@ -27,15 +24,20 @@ public class Asteroid : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == AsteroidTag)
+        if (collision.gameObject.tag == Game.AsteroidTag)
         {
             // OnHit(collision);
         }
 
-        if (collision.gameObject.tag == BulletTag)
+        if (collision.gameObject.tag == Game.BulletTag)
         {
             Destroy(collision.gameObject);
             OnHit(collision);
+        }
+
+        if (collision.gameObject.tag == Game.ShipTag)
+        {
+            Debug.Log("game over! somebody should probably implement this lol");
         }
     }
 
