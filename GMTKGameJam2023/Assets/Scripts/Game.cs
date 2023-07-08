@@ -8,7 +8,9 @@ public class Game : MonoBehaviour
     public static readonly string BulletTag = "Bullet";
     public static readonly string CrosshairTag = "Crosshair";
     public static readonly string HealthBarTag = "HealthBar";
+    public static readonly string LoseTag = "Lose";
     public static readonly string ShipTag = "Ship";
+    public static readonly string WinTag = "Win";
 
     public GameObject AsteroidPrefab;
 
@@ -23,6 +25,9 @@ public class Game : MonoBehaviour
     private bool _win;
     private bool _lose;
 
+    public GameObject WinUI;
+    public GameObject LoseUI;
+
     void Awake()
     {
         if (!AsteroidPrefab)
@@ -32,6 +37,16 @@ public class Game : MonoBehaviour
         if (!AsteroidPrefab.GetComponent<Asteroid>())
         {
             Debug.LogError("Game requires AsteroidPrefab to have an Asteroid script");
+        }
+
+        if (!WinUI)
+        {
+            Debug.LogError("Game requires WinUI to be set");
+        }
+
+        if (!LoseUI)
+        {
+            Debug.LogError("Game requires LoseUI to be set");
         }
 
         _camera = Camera.main;
@@ -103,6 +118,9 @@ public class Game : MonoBehaviour
         Debug.Log("Win");
         _win = true;
         Time.timeScale = 0;
+
+        // var win = GameObject.FindWithTag(WinTag);
+        WinUI.SetActive(true);
     }
 
     public void Lose()
@@ -116,6 +134,9 @@ public class Game : MonoBehaviour
         Debug.Log("Lose");
         _lose = true;
         Time.timeScale = 0;
+
+        // var lose = GameObject.FindWithTag(LoseTag);
+        LoseUI.SetActive(true);
     }
 
     // Update is called once per frame

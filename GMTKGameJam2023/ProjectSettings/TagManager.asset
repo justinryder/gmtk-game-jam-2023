@@ -12,6 +12,8 @@ TagManager:
   - DesiredPOS
   - Crosshair
   - HealthBar
+  - Win
+  - Lose
   layers:
   - Default
   - TransparentFX
