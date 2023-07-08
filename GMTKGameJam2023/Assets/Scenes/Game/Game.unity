@@ -374,6 +374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere Of Influence
       objectReference: {fileID: 0}
+    - target: {fileID: 3403699068122252294, guid: c4e829073396a024b9f40f0342cdc6b8, type: 3}
+      propertyPath: Gravity
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8062032270480610900, guid: c4e829073396a024b9f40f0342cdc6b8, type: 3}
       propertyPath: m_RootOrder
       value: 7
