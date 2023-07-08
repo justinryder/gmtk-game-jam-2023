@@ -247,7 +247,7 @@ MonoBehaviour:
   AsteroidPrefab: {fileID: 4194840480837985094, guid: 1c4a3f615e82acd4dada5f7c5e2d9bd8, type: 3}
   AsteroidSpawnCount: 20
   AsteroidSpawnMinSize: 0.5
-  AsteroidSpawnMaxSize: 2
+  AsteroidSpawnMaxSize: 1.5
   AsteroidSpawnMinSpeed: 0.5
   AsteroidSpawnMaxSpeed: 5
 --- !u!4 &884746155

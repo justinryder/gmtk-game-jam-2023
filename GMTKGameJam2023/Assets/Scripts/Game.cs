@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
     {
         for (var i = 0; i < AsteroidSpawnCount; i++)
         {
-            SpawnAsteroid(RandomWorldPositionOnScreen(), RandomSpeed());
+            SpawnAsteroid(RandomWorldPositionOnScreen(), RandomSize(), RandomSpeed());
         }
     }
 
@@ -48,17 +48,28 @@ public class Game : MonoBehaviour
         );
     }
 
-    Vector2 RandomSpeed()
+    Vector2 RandomVectorRangeMagnitude(float minMagnitutde, float maxMagnitude)
     {
-        var diff = AsteroidSpawnMaxSpeed - AsteroidSpawnMinSpeed;
+        var diff = maxMagnitude - minMagnitutde;
         var rand = Random.insideUnitCircle * diff;
-        return rand + (Vector2.one * AsteroidSpawnMinSpeed);
+        return rand + (Vector2.one * minMagnitutde);
     }
 
-    GameObject SpawnAsteroid(Vector2 position, Vector2 speed)
+    Vector2 RandomSpeed()
+    {
+        return RandomVectorRangeMagnitude(AsteroidSpawnMinSpeed, AsteroidSpawnMaxSpeed);
+    }
+
+    Vector2 RandomSize()
+    {
+        return Vector2.one * Random.Range(AsteroidSpawnMinSize, AsteroidSpawnMaxSize);
+    }
+
+    GameObject SpawnAsteroid(Vector2 position, Vector2 size, Vector2 speed)
     {
         var asteroid = GameObject.Instantiate(AsteroidPrefab);
         asteroid.transform.position = position;
+        asteroid.transform.localScale = size;
         var rigidbody = asteroid.GetComponent<Rigidbody2D>();
         rigidbody.velocity = speed;
         return asteroid;
