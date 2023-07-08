@@ -88,6 +88,11 @@ public class PlayerMovement : MonoBehaviour
         transform.position += delta.normalized * step;
 
         Ship.transform.position += Shipdelta.normalized * speed * Time.deltaTime;
+        //Ship.transform.LookAt(DesiredPOS.transform.position * Time.deltaTime * speed);
+        //Ship.transform.rotation = Quaternion.Slerp(Quaternion.Euler(DesiredPOS.transform.position.x, 0f,0f), Quaternion.LookRotation(DesiredPOS.transform.position), 2f * Time.deltaTime);
+
+        //var angle = Mathf.Atan2(Shipdelta.y, Shipdelta.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 
     }

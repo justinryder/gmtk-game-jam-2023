@@ -9,6 +9,7 @@ TagManager:
   - Ship
   - Game
   - Bullet
+  - DesiredPOS
   layers:
   - Default
   - TransparentFX
