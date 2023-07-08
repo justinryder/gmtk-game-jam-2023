@@ -10,8 +10,8 @@ public class DesiredPositionforShip : MonoBehaviour
     private GameObject[] Asteroids;
     public float distanceTotal;
 
-    private float speed = -.9f;
-    private float centerForceMagnitude = 0.005f;
+    public float speed = -3f;
+    public float centerForceMagnitude = 0.1f;
     
 
     void Awake()
@@ -78,7 +78,7 @@ public class DesiredPositionforShip : MonoBehaviour
         Vector3 centerInWorld = Camera.main.ViewportToWorldPoint(center);
         Vector3 toCenter = centerInWorld - DesiredPOS.transform.position;
         Vector3 centerForce = toCenter.normalized * centerForceMagnitude;
-        
+
         centerForce.z = 0; // Prevent movement in the Z direction
 
         DesiredPOS.transform.position += centerForce;

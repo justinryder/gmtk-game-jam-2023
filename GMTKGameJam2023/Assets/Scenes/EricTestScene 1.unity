@@ -697,6 +697,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1909322262058468628, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909322262058468628, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1657336731
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287345444277114939, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287345444277114939, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1657336731
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509035545907609683, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509035545907609683, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1657336731
+      objectReference: {fileID: 0}
     - target: {fileID: 6552758075829300728, guid: 1ebd0ad1516291b4fa35bd45de464a17, type: 3}
       propertyPath: m_Name
       value: Background
