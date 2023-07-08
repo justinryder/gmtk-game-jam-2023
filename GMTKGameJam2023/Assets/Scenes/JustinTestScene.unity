@@ -260,6 +260,100 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.28
+--- !u!1001 &1365708745
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 138626035953810812, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7090423678400839667, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 138626035953810812, guid: e7356940f7807274ba9071be25d03418, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1809747835}
+  m_SourcePrefab: {fileID: 100100000, guid: e7356940f7807274ba9071be25d03418, type: 3}
+--- !u!1 &1809747834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 138626035953810812, guid: e7356940f7807274ba9071be25d03418, type: 3}
+  m_PrefabInstance: {fileID: 1365708745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1809747835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809747834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a968b6b7849f10a48b94504a21015895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 699232766}
+  Offset: {x: 0, y: 0.65, z: 0}
+--- !u!114 &1809747836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7038634369115485083, guid: e7356940f7807274ba9071be25d03418, type: 3}
+  m_PrefabInstance: {fileID: 1365708745}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809747834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4717902fb9204c748a4018187f5f63a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &627401722884493950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272,6 +366,10 @@ PrefabInstance:
       propertyPath: Crosshairs
       value: 
       objectReference: {fileID: 609516319}
+    - target: {fileID: -1006331555032039714, guid: 477b4153a3d1e1f458421adb231fe856, type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 1809747836}
     - target: {fileID: 128083209114575946, guid: 477b4153a3d1e1f458421adb231fe856, type: 3}
       propertyPath: m_Name
       value: Ship

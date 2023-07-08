@@ -35,7 +35,7 @@ public class Shooter : MonoBehaviour
             return;
         }
 
-        Debug.Log("Shoot");
+        // Debug.Log("Shoot");
 
         _lastShotTime = Time.time;
 
