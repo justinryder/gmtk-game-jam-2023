@@ -66,9 +66,13 @@ public class Game : MonoBehaviour
     Vector2 RandomWorldPositionOnScreen()
     {
         var safeArea = Screen.safeArea;
+        var w = safeArea.width;
+        var h = safeArea.height;
+        var x = Random.Range(safeArea.x, w);
+        var y = Random.Range(safeArea.y, h);
         var screenPosition = new Vector3(
-            Random.Range(safeArea.x, safeArea.width),
-            Random.Range(safeArea.y, safeArea.height),
+            (((x - w/2) * 2/3) % w + w) % w,
+            (((y - h/2) * 2/3) % h + h) % h,
             0
         );
         var worldPosition = _camera.ScreenToWorldPoint(screenPosition);
