@@ -15,8 +15,6 @@ public class Game : MonoBehaviour
     public GameObject AsteroidPrefab;
 
     public int AsteroidSpawnCount = 20;
-    public float AsteroidSpawnMinSize = 0.5f;
-    public float AsteroidSpawnMaxSize = 2.0f;
     public float AsteroidSpawnMinSpeed = 0.5f;
     public float AsteroidSpawnMaxSpeed = 5.0f;
 
@@ -66,9 +64,13 @@ public class Game : MonoBehaviour
     Vector2 RandomWorldPositionOnScreen()
     {
         var safeArea = Screen.safeArea;
+        var w = safeArea.width;
+        var h = safeArea.height;
+        var x = Random.Range(safeArea.x, w);
+        var y = Random.Range(safeArea.y, h);
         var screenPosition = new Vector3(
-            Random.Range(safeArea.x, safeArea.width),
-            Random.Range(safeArea.y, safeArea.height),
+            (((x - w/2) * 2/3) % w + w) % w,
+            (((y - h/2) * 2/3) % h + h) % h,
             0
         );
         var worldPosition = _camera.ScreenToWorldPoint(screenPosition);
@@ -88,11 +90,6 @@ public class Game : MonoBehaviour
     Vector2 RandomSpeed()
     {
         return RandomVectorRangeMagnitude(AsteroidSpawnMinSpeed, AsteroidSpawnMaxSpeed);
-    }
-
-    Vector2 RandomSize()
-    {
-        return Vector2.one * Random.Range(AsteroidSpawnMinSize, AsteroidSpawnMaxSize);
     }
 
     public GameObject SpawnAsteroid(Vector2 position, int size, Vector2 speed)
