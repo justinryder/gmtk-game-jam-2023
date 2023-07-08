@@ -84,6 +84,7 @@ public class Game : MonoBehaviour
         asteroid.SetSize(size);
         var rigidbody = asteroidGameObject.GetComponent<Rigidbody2D>();
         rigidbody.velocity = speed;
+        asteroid.transform.parent = gameObject.transform;
         return asteroidGameObject;
     }
 
