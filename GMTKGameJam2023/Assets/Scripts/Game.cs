@@ -20,6 +20,10 @@ public class Game : MonoBehaviour
         {
             Debug.LogError("Game requires AsteroidPrefab to be set");
         }
+        if (!AsteroidPrefab.GetComponent<Asteroid>())
+        {
+            Debug.LogError("Game requires AsteroidPrefab to have an Asteroid script");
+        }
 
         _camera = Camera.main;
     }
@@ -29,7 +33,7 @@ public class Game : MonoBehaviour
     {
         for (var i = 0; i < AsteroidSpawnCount; i++)
         {
-            SpawnAsteroid(RandomWorldPositionOnScreen(), RandomSize(), RandomSpeed());
+            SpawnAsteroid(RandomWorldPositionOnScreen(), Asteroid.MaxSize, RandomSpeed());
         }
     }
 
@@ -65,14 +69,15 @@ public class Game : MonoBehaviour
         return Vector2.one * Random.Range(AsteroidSpawnMinSize, AsteroidSpawnMaxSize);
     }
 
-    GameObject SpawnAsteroid(Vector2 position, Vector2 size, Vector2 speed)
+    public GameObject SpawnAsteroid(Vector2 position, int size, Vector2 speed)
     {
-        var asteroid = GameObject.Instantiate(AsteroidPrefab);
-        asteroid.transform.position = position;
-        asteroid.transform.localScale = size;
-        var rigidbody = asteroid.GetComponent<Rigidbody2D>();
+        var asteroidGameObject = GameObject.Instantiate(AsteroidPrefab);
+        asteroidGameObject.transform.position = position;
+        var asteroid = asteroidGameObject.GetComponent<Asteroid>();
+        asteroid.SetSize(size);
+        var rigidbody = asteroidGameObject.GetComponent<Rigidbody2D>();
         rigidbody.velocity = speed;
-        return asteroid;
+        return asteroidGameObject;
     }
 
     // Update is called once per frame
