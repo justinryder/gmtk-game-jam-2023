@@ -10,8 +10,8 @@ public class DesiredPositionforShip : MonoBehaviour
     private GameObject[] Asteroids;
     public float distanceTotal;
 
-    public float speed = -.9f;
-    public float centerForceMagnitude = 0.005f;
+    public float speed = -3f;
+    public float centerForceMagnitude = 0.1f;
     
 
     void Awake()
