@@ -15,8 +15,6 @@ public class Game : MonoBehaviour
     public GameObject AsteroidPrefab;
 
     public int AsteroidSpawnCount = 20;
-    public float AsteroidSpawnMinSize = 0.5f;
-    public float AsteroidSpawnMaxSize = 2.0f;
     public float AsteroidSpawnMinSpeed = 0.5f;
     public float AsteroidSpawnMaxSpeed = 5.0f;
 
@@ -88,11 +86,6 @@ public class Game : MonoBehaviour
     Vector2 RandomSpeed()
     {
         return RandomVectorRangeMagnitude(AsteroidSpawnMinSpeed, AsteroidSpawnMaxSpeed);
-    }
-
-    Vector2 RandomSize()
-    {
-        return Vector2.one * Random.Range(AsteroidSpawnMinSize, AsteroidSpawnMaxSize);
     }
 
     public GameObject SpawnAsteroid(Vector2 position, int size, Vector2 speed)
