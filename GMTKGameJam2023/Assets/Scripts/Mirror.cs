@@ -9,16 +9,22 @@ public class Mirror : MonoBehaviour
         if (!GetComponent<Renderer>().isVisible)
         {
             Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-            
-            if (pos.x < 0.0f) {
+
+            if (pos.x < 0.0f)
+            {
                 pos.x = 1.0f; // right
-            } else if (pos.x > 1.0f) {
+            }
+            else if (pos.x > 1.0f)
+            {
                 pos.x = 0.0f; // left
             }
 
-            if (pos.y < 0.0f) {
+            if (pos.y < 0.0f)
+            {
                 pos.y = 1.0f; // top
-            } else if (pos.y > 1.0f) {
+            }
+            else if (pos.y > 1.0f)
+            {
                 pos.y = 0.0f; // bottom
             }
 
@@ -26,4 +32,3 @@ public class Mirror : MonoBehaviour
         }
     }
 }
-
