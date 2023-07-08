@@ -38,15 +38,31 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector3 delta = SOI.transform.position - Ship.transform.position;
+
+        Vector3 SOIpos = Camera.main.WorldToViewportPoint(SOI.transform.position);
+        Vector3 Shippos = Camera.main.WorldToViewportPoint(SOI.transform.position);
+
+        if (Mathf.Abs(SOIpos.x-Shippos.x)>0.5f) //Shortest distance is toward the object in the X Axis.
+        {
+           delta = new Vector3(delta.x * -1,delta.y,delta.z);
+
+        }
+
+        if (Mathf.Abs(SOIpos.y-Shippos.y)>0.5f) // Shortest distance is toward the object in the Y Axis.
+        {
+            delta = new Vector3(delta.x,delta.y * -1,delta.z);
+        }
+
         distanceTotal = delta.magnitude;
 
         float step = speed * Time.deltaTime;
 
         // move sprite towards the target location
-        if (distanceTotal < 2)
+        transform.position += delta.normalized * step;
+        /*if (distanceTotal < 10)
         {
             transform.position += delta.normalized * step;
-        }
+        }*/
         
     }
 }
