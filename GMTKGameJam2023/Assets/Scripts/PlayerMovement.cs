@@ -5,24 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    private GameObject SOI;
     private GameObject Ship;
     private GameObject DesiredPOS;
     
-    //private GameObject[] Asteroid;
     public float distanceTotal;
 
-    private float speed = -2.0f;
+    private float speed = -3.0f;
     
 
     void Awake()
     {
-        SOI = GameObject.FindWithTag("SOI");
-        if (!SOI)
-        {
-            Debug.LogError("PlayerMovement.cs requires the tag SOI to exist in the scene");
-        }
-        
         Ship = GameObject.FindWithTag("Ship");
         if (!Ship)
         {
@@ -46,28 +38,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         
-        Vector3 delta =  SOI.transform.position - DesiredPOS.transform.position;
-        float distance = delta.magnitude;
 
-        Vector3 SOIpos = Camera.main.WorldToViewportPoint(SOI.transform.position);
         Vector3 Desiredpos = Camera.main.WorldToViewportPoint(DesiredPOS.transform.position);
         Vector3 Shippos = Camera.main.WorldToViewportPoint(Ship.transform.position);
 
         Vector3 Shipdelta = DesiredPOS.transform.position - Ship.transform.position;
-
-
-
-
-        if (Mathf.Abs(SOIpos.x-Desiredpos.x)>0.5f) //Shortest distance is toward the object in the X Axis.
-        {
-           delta.x = delta.x * -1;
-           //Debug
-        }
-
-        if (Mathf.Abs(SOIpos.y-Desiredpos.y)>0.5f) // Shortest distance is toward the object in the Y Axis.
-        {
-            delta.y = delta.y * -1;
-        }
 
         if (Mathf.Abs(Desiredpos.x-Shippos.x)<0.5f) //Shortest distance is toward the object in the X Axis.
         {
@@ -81,18 +56,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        distanceTotal = delta.magnitude;
-
         float step = speed * Time.deltaTime;
 
-        transform.position += delta.normalized * step;
-
-        Ship.transform.position += Shipdelta.normalized * speed * Time.deltaTime;
+        transform.position += Shipdelta.normalized * speed * Time.deltaTime;
         //Ship.transform.LookAt(DesiredPOS.transform.position * Time.deltaTime * speed);
         //Ship.transform.rotation = Quaternion.Slerp(Quaternion.Euler(DesiredPOS.transform.position.x, 0f,0f), Quaternion.LookRotation(DesiredPOS.transform.position), 2f * Time.deltaTime);
 
-        //var angle = Mathf.Atan2(Shipdelta.y, Shipdelta.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        var angle = Mathf.Atan2(Shipdelta.y, Shipdelta.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
 
     }
