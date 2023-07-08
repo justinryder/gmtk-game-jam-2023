@@ -8,10 +8,10 @@ public class DesiredPositionforShip : MonoBehaviour
     private GameObject SOI;
     private GameObject DesiredPOS;
     private GameObject[] Asteroids;
-    public float distanceTotal;
+    private float distanceTotal;
 
-    public float speed = -3f;
-    public float centerForceMagnitude = 0.1f;
+    private float speed = -3f;
+    private float centerForceMagnitude = 0.10f;
     
 
     void Awake()
