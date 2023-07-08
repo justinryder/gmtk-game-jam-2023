@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private GameObject Ship;
     private GameObject DesiredPOS;
     
-    public float distanceTotal;
+    private float distanceTotal;
 
-    private float speed = -3.0f;
+    private float speed = -1.2f;
     
 
     void Awake()
