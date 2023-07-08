@@ -6,8 +6,11 @@ public class Shooter : MonoBehaviour
 {
     public GameObject BulletPrefab;
     public float BulletSpeed = 10.0f;
+    public float BulletSpawnDistance = 0.5f;
+    public float ShootDelay = 1.0f;
 
     private bool _debug = true;
+    private float _lastShotTime;
 
     void Awake()
     {
@@ -27,8 +30,15 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
+        if (_lastShotTime + ShootDelay >= Time.time)
+        {
+            return;
+        }
+
+        _lastShotTime = Time.time;
+
         var bullet = GameObject.Instantiate(BulletPrefab);
-        bullet.transform.position = transform.position;
+        bullet.transform.position = transform.position + transform.up * BulletSpawnDistance;
         bullet.transform.rotation = transform.rotation;
         var rigidbody = bullet.GetComponent<Rigidbody2D>();
         rigidbody.velocity = transform.up * BulletSpeed;

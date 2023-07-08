@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 8276393712280225551}
   - component: {fileID: 2941613114198460318}
   - component: {fileID: 3203854307441582893}
+  - component: {fileID: -8865942863438141577}
+  - component: {fileID: -5490496304720859853}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Ship
@@ -129,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 4501955270257978739, guid: 64dd18ad1e8dc1b47929ec1f4cfffa9f, type: 3}
   BulletSpeed: 10
+  BulletSpawnDistance: 1
 --- !u!114 &2941613114198460318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +157,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceTotal: 0
+--- !u!114 &-8865942863438141577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128083209114575946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1415ed00a0de523478208b0c61b35fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-5490496304720859853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128083209114575946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b920d192f2f9374696a55503ee4b943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
