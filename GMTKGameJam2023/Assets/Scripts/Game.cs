@@ -31,9 +31,10 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var rand = new System.Random();
         for (var i = 0; i < AsteroidSpawnCount; i++)
         {
-            SpawnAsteroid(RandomWorldPositionOnScreen(), Asteroid.MaxSize, RandomSpeed());
+            SpawnAsteroid(RandomWorldPositionOnScreen(), rand.Next(Asteroid.MinSize, Asteroid.MaxSize + 1), RandomSpeed());
         }
     }
 
