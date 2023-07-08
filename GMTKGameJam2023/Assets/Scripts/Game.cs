@@ -6,6 +6,7 @@ public class Game : MonoBehaviour
 {
     public static readonly string AsteroidTag = "Asteroid";
     public static readonly string BulletTag = "Bullet";
+    public static readonly string CrosshairTag = "Crosshair";
     public static readonly string ShipTag = "Ship";
 
     public GameObject AsteroidPrefab;

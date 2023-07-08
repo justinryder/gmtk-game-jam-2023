@@ -15,6 +15,11 @@ public class TurnToFace : MonoBehaviour
 
     void Awake()
     {
+        if (!Crosshairs)
+        {
+            Crosshairs = GameObject.FindWithTag(Game.CrosshairTag);
+        }
+
         if (Crosshairs)
         {
             Crosshairs.SetActive(false);
