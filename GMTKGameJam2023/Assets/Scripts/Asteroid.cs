@@ -38,6 +38,13 @@ public class Asteroid : MonoBehaviour
         if (collision.gameObject.tag == Game.ShipTag)
         {
             Debug.Log("game over! somebody should probably implement this lol");
+            var shipHealth = collision.gameObject.GetComponent<ShipHealth>();
+            if (shipHealth)
+            {
+                shipHealth.OnHit();
+            }
+            
+            OnHit(collision);
         }
     }
 

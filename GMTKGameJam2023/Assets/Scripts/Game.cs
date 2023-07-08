@@ -6,6 +6,7 @@ public class Game : MonoBehaviour
 {
     public static readonly string AsteroidTag = "Asteroid";
     public static readonly string BulletTag = "Bullet";
+    public static readonly string CrosshairTag = "Crosshair";
     public static readonly string ShipTag = "Ship";
 
     public GameObject AsteroidPrefab;
@@ -83,6 +84,7 @@ public class Game : MonoBehaviour
         asteroid.SetSize(size);
         var rigidbody = asteroidGameObject.GetComponent<Rigidbody2D>();
         rigidbody.velocity = speed;
+        asteroid.transform.parent = gameObject.transform;
         return asteroidGameObject;
     }
 
