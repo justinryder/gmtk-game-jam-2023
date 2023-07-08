@@ -29,6 +29,7 @@ public class ShootRandomly : MonoBehaviour
         var asteroids = GameObject.FindGameObjectsWithTag(Game.AsteroidTag);
         if (asteroids.Length == 0)
         {
+            // TODO: win condition, but do this in Game.cs
             Debug.Log("All Asteroids destroyed, no target found");
             return;
         }
@@ -57,8 +58,8 @@ public class ShootRandomly : MonoBehaviour
 
         _shooter.Shoot();
         
-        Debug.Log("Turning to face and shoot");
-        Debug.Log(asteroid);
+        // Debug.Log("Turning to face and shoot");
+        // Debug.Log(asteroid);
 
         _turnToFace.TurnTo(asteroid.transform, 30.0f);
     }

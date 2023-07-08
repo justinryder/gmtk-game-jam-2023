@@ -56,7 +56,7 @@ public class TurnToFace : MonoBehaviour
 
         if (Mathf.Abs(angleToEndRadians - 1) < _rotationSpeed * Mathf.Deg2Rad * Time.deltaTime)
         {
-            Debug.Log("Done turning to face");
+            // Debug.Log("Done turning to face");
             _turning = false;
             if (Crosshairs)
             {
