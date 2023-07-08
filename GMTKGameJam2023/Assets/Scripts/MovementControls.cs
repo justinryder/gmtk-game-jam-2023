@@ -17,6 +17,6 @@ public class MovementControls : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rigidbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * Speed * Time.deltaTime));
+        _rigidbody.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Speed * Time.deltaTime);
     }
 }

@@ -21,7 +21,7 @@ public class GravityWell : MonoBehaviour
         foreach (var asteroid in _asteroids)
         {
             var deltaPosition = transform.position - asteroid.transform.position;
-            asteroid.AddForce(deltaPosition.normalized * Gravity * Time.deltaTime);
+            asteroid.AddForce((deltaPosition.normalized / deltaPosition.magnitude) * Gravity * Time.deltaTime);
         }
     }
 
