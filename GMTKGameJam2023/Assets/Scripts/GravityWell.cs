@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GravityWell : MonoBehaviour
 {
-    public float Gravity = 5.0f;
+    public float Gravity = 200.0f;
 
     public string InfluenceTag = "Asteroid";
 
