@@ -8,6 +8,7 @@ public class ShootRandomly : MonoBehaviour
 {
     private Shooter _shooter;
     private TurnToFace _turnToFace;
+    public AudioClip ShootSound;
 
     private float TurnSpeed = 100.0f;
 
@@ -74,6 +75,11 @@ public class ShootRandomly : MonoBehaviour
         }
 
         _shooter.Shoot();
+        
+        if (ShootSound)
+        {
+            AudioSource.PlayClipAtPoint(ShootSound, transform.position);
+        }
         
         // Debug.Log("Turning to face and shoot");
         // Debug.Log(asteroid);
