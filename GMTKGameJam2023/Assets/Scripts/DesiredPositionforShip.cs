@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +6,12 @@ public class DesiredPositionforShip : MonoBehaviour
 {
 
     private GameObject SOI;
-    private GameObject DesiredPOS;
+    private GameObject Ship;
     private GameObject[] Asteroids;
     private float distanceTotal;
 
     private float speed = -3f;
-    private float centerForceMagnitude = 0.10f;
+    private float centerForceMagnitude = 0;
     
 
     void Awake()
@@ -22,13 +22,11 @@ public class DesiredPositionforShip : MonoBehaviour
             Debug.LogError("DesiredPositionforShip.cs requires the tag SOI to exist in the scene");
         }
         
-        DesiredPOS = GameObject.FindWithTag("DesiredPOS");
-        if (!DesiredPOS)
+        Ship = GameObject.FindWithTag(Game.ShipTag);
+        if (!Ship)
         {
-            Debug.LogError("DesiredPositionforShip.cs requires the tag DesiredPOS to exist in the scene");
+            Debug.LogError("DesiredPositionforShip.cs requires the tag Ship to exist in the scene");
         }
-        
-
     }
 
     // Start is called before the first frame update
@@ -40,48 +38,66 @@ public class DesiredPositionforShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject[] Asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+        GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
 
-        
-        foreach (GameObject Asteroid in Asteroids)
+
+        GameObject asteroid = asteroids[0];
+        float asteroidDistance = (asteroids[0].transform.position - Ship.transform.position).magnitude;
+        for (var i = 1; i < asteroids.Length; i++)
         {
-            if (Asteroid == null)
+            var distance = (asteroids[i].transform.position - Ship.transform.position).magnitude;
+            if (distance < asteroidDistance)
             {
-                Debug.LogError("An Asteroid is null");
+                asteroid = asteroids[i];
+                asteroidDistance = distance;
                 continue;
             }
-            Vector3 delta = Asteroid.transform.position - DesiredPOS.transform.position;
-            float distance = delta.magnitude;
-
-            Vector3 AsteroidPos = Camera.main.WorldToViewportPoint(Asteroid.transform.position);
-            Vector3 Desiredpos = Camera.main.WorldToViewportPoint(DesiredPOS.transform.position);
-
-            if (Mathf.Abs(AsteroidPos.x - Desiredpos.x) > 0.5f) //Shortest distance is toward the object in the X Axis.
-            {
-                delta.x = delta.x * -1;
-            }
-
-            if (Mathf.Abs(AsteroidPos.y - Desiredpos.y) > 0.5f) // Shortest distance is toward the object in the Y Axis.
-            {
-                delta.y = delta.y * -1;
-            }
-
-            //float step = speed * Time.deltaTime;
-            float step = speed * Time.deltaTime / distance;
-
-            transform.position += delta.normalized * step;
         }
 
-        // Add a force that pushes DesiredPOS towards the center of the screen
-        // Tried to promote DesiredPOS to head towards the center of screen rather than edges.
-        Vector3 center = new Vector3(0.5f, 0.5f, DesiredPOS.transform.position.z);
-        Vector3 centerInWorld = Camera.main.ViewportToWorldPoint(center);
-        Vector3 toCenter = centerInWorld - DesiredPOS.transform.position;
-        Vector3 centerForce = toCenter.normalized * centerForceMagnitude;
+        var deltaPosition = asteroid.transform.position - Ship.transform.position;
+        transform.position = Ship.transform.position - deltaPosition;
+        
+        // GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+        // Vector3 position = Vector3.zero;
 
-        centerForce.z = 0; // Prevent movement in the Z direction
+        // foreach (GameObject Asteroid in Asteroids)
+        // {
+        //     if (Asteroid == null)
+        //     {
+        //         Debug.LogError("An Asteroid is null");
+        //         continue;
+        //     }
+        //     Vector3 delta = Asteroid.transform.position - Ship.transform.position;
+        //     float distance = delta.magnitude;
 
-        DesiredPOS.transform.position += centerForce;
+        //     Vector3 AsteroidPos = Camera.main.WorldToViewportPoint(Asteroid.transform.position);
+        //     Vector3 Desiredpos = Camera.main.WorldToViewportPoint(Ship.transform.position);
 
+        //     // if (Mathf.Abs(AsteroidPos.x - Desiredpos.x) > 0.5f) //Shortest distance is toward the object in the X Axis.
+        //     // {
+        //     //     delta.x = delta.x * -1;
+        //     // }
+
+        //     // if (Mathf.Abs(AsteroidPos.y - Desiredpos.y) > 0.5f) // Shortest distance is toward the object in the Y Axis.
+        //     // {
+        //     //     delta.y = delta.y * -1;
+        //     // }
+
+        //     //float step = speed * Time.deltaTime;
+        //     // float step = speed * Time.deltaTime / distance;
+
+        //     position += delta.normalized * step;
+        // }
+
+        // // Add a force that pushes DesiredPOS towards the center of the screen
+        // // Tried to promote DesiredPOS to head towards the center of screen rather than edges.
+        // Vector3 center = new Vector3(0.5f, 0.5f, position.z);
+        // Vector3 centerInWorld = Camera.main.ViewportToWorldPoint(center);
+        // Vector3 toCenter = centerInWorld - position;
+        // Vector3 centerForce = toCenter.normalized * centerForceMagnitude;
+
+        // centerForce.z = 0; // Prevent movement in the Z direction
+
+        // transform.position = position;
     }
 }

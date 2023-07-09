@@ -10,7 +10,9 @@ public class PlayerMovement : MonoBehaviour
     
     private float distanceTotal;
 
-    private float speed = -2f;
+    private float speed = -80f;
+
+    private Rigidbody2D _rigidbody;
     
 
     void Awake()
@@ -25,7 +27,11 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("PlayerMovement.cs requires the tag DesiredPOS to exist in the scene");
         }
-
+        _rigidbody = GetComponent<Rigidbody2D>();
+        if (!_rigidbody)
+        {
+            Debug.LogError("PlayerMovement must have a Rigidbody2D");
+        }
     }
 
     // Start is called before the first frame update
@@ -58,9 +64,10 @@ public class PlayerMovement : MonoBehaviour
 
         float step = speed * Time.deltaTime;
         
-        if (Shipdelta.magnitude > .3)
+        // if (Shipdelta.magnitude > .3)
         {
-            transform.position += Shipdelta.normalized * step;
+            _rigidbody.AddForce(Shipdelta.normalized * step);
+            // transform.position += Shipdelta.normalized * step;
         }
 
 
