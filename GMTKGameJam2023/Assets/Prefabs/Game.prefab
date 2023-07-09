@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8264647935958631290}
   - component: {fileID: 4851875545058213788}
+  - component: {fileID: -5235558672220840900}
   m_Layer: 0
   m_Name: Game
   m_TagString: Game
@@ -46,7 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AsteroidPrefab: {fileID: 4194840480837985094, guid: 1c4a3f615e82acd4dada5f7c5e2d9bd8, type: 3}
   AsteroidSpawnCount: 20
-  AsteroidSpawnMinSize: 0.5
-  AsteroidSpawnMaxSize: 1.5
   AsteroidSpawnMinSpeed: 0.5
   AsteroidSpawnMaxSpeed: 5
+  WinUI: {fileID: 0}
+  LoseUI: {fileID: 0}
+--- !u!114 &-5235558672220840900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2465639181284690882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9203e0fdc48420489f71583da9fbcb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
