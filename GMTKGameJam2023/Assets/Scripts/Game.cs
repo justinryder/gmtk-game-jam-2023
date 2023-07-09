@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
     public static readonly string HealthBarTag = "HealthBar";
     public static readonly string LoseTag = "Lose";
     public static readonly string ShipTag = "Ship";
+    public static readonly string SoiTag = "SOI";
     public static readonly string WinTag = "Win";
 
     public GameObject AsteroidPrefab;

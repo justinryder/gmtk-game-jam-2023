@@ -65,6 +65,9 @@ public class TurnToFace : MonoBehaviour
             return;
         }
 
+        var rigidbody = GetComponent<Rigidbody2D>();
+        rigidbody.totalTorque = 0;
+
         transform.Rotate(
             0,
             0,
