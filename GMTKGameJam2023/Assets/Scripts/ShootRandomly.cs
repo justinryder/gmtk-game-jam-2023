@@ -10,7 +10,7 @@ public class ShootRandomly : MonoBehaviour
     private TurnToFace _turnToFace;
     public AudioClip ShootSound;
 
-    private float TurnSpeed = 50.0f;
+    private float TurnSpeed = 100.0f;
 
     private bool _enabled = true;
 
