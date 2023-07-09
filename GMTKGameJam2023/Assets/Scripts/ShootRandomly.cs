@@ -9,7 +9,7 @@ public class ShootRandomly : MonoBehaviour
     private Shooter _shooter;
     private TurnToFace _turnToFace;
 
-    private float TurnSpeed = 50.0f;
+    private float TurnSpeed = 100.0f;
 
     private bool _enabled = true;
 
