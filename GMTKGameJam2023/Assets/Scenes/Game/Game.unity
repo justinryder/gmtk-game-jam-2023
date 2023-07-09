@@ -453,7 +453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3403699068122252294, guid: c4e829073396a024b9f40f0342cdc6b8, type: 3}
       propertyPath: Gravity
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8062032270480610900, guid: c4e829073396a024b9f40f0342cdc6b8, type: 3}
       propertyPath: m_RootOrder
@@ -1500,6 +1500,10 @@ PrefabInstance:
       propertyPath: LoseUI
       value: 
       objectReference: {fileID: 1136625249}
+    - target: {fileID: 4851875545058213788, guid: a4eb33212b8f1ad42be9aa313446e580, type: 3}
+      propertyPath: AsteroidSpawnCount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8264647935958631290, guid: a4eb33212b8f1ad42be9aa313446e580, type: 3}
       propertyPath: m_RootOrder
       value: 4

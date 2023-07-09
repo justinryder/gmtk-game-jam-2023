@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     
     private float distanceTotal;
 
-    private float speed = -80f;
+    private float speed = -250.0f;
 
     private Rigidbody2D _rigidbody;
     
@@ -69,8 +69,6 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.AddForce(Shipdelta.normalized * step);
             // transform.position += Shipdelta.normalized * step;
         }
-
-
 
 
     }
