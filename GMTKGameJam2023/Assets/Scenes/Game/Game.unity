@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The space scum has ben destroyed nice work space demon.
+  m_text: The space scum has been destroyed nice work space demon.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262de8ae57dc90a4b9dd6d04aa272dd1, type: 2}
   m_sharedMaterial: {fileID: 8539198633351615661, guid: 262de8ae57dc90a4b9dd6d04aa272dd1, type: 2}
