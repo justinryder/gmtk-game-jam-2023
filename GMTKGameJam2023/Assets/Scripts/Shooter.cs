@@ -7,7 +7,7 @@ public class Shooter : MonoBehaviour
     public GameObject BulletPrefab;
     private float BulletSpeed = 10.0f;
     private float BulletSpawnDistance = 0.5f;
-    private float ShootDelay = 1.0f;
+    private float ShootDelay = 0.2f;
 
     private bool _debug = true;
     private float _lastShotTime;

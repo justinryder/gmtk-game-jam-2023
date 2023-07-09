@@ -68,10 +68,12 @@ public class TurnToFace : MonoBehaviour
         var rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.totalTorque = 0;
 
+        var turnDirection = Vector2.Dot((Vector2)transform.right, (Vector2)toEndPos.normalized);
+
         transform.Rotate(
             0,
             0,
-            Mathf.Sign((angleToEndRadians - 1) * Mathf.Rad2Deg) * _rotationSpeed * Time.deltaTime
+            -Mathf.Sign(turnDirection) * _rotationSpeed * Time.deltaTime
         );
     }
 }

@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b55777c9b18734495298d20c3b0102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceTotal: 0
 --- !u!114 &-8865942863438141577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b920d192f2f9374696a55503ee4b943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShootSound: {fileID: 8300000, guid: 8744440e01a0e624f9d3bf695c1eb579, type: 3}
 --- !u!114 &-1006331555032039714
 MonoBehaviour:
   m_ObjectHideFlags: 0
