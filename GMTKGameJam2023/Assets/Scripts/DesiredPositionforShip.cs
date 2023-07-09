@@ -56,7 +56,7 @@ public class DesiredPositionforShip : MonoBehaviour
 
         var deltaPosition = asteroid.transform.position - Ship.transform.position;
         transform.position = Ship.transform.position - deltaPosition;
-        
+
         // GameObject[] asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
         // Vector3 position = Vector3.zero;
 
