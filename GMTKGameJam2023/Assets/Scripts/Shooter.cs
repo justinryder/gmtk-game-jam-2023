@@ -24,7 +24,7 @@ public class Shooter : MonoBehaviour
     {
         if (Input.GetKeyUp("space") && _debug)
         {
-            Shoot();
+            // Shoot();
         }
     }
 

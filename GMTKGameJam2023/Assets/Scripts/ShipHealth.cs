@@ -22,7 +22,7 @@ public class ShipHealth : MonoBehaviour
     {
         if (Input.GetKeyUp("z"))
         {
-            OnHit();
+            // OnHit();
         }
     }
 
