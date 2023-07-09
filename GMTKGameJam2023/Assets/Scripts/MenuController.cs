@@ -7,6 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public void LoadMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -18,6 +19,7 @@ public class MenuController : MonoBehaviour
 
     public void LoadCredits()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Credits");
     }
 }
